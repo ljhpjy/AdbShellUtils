@@ -43,3 +43,11 @@ jobs:
       with:
         name: app-release
         path: app/build/outputs/apk/release/*.apk
+
+    # 可选：上传构建报告
+    - name: Upload build reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-reports
+        path: app/build/reports/
